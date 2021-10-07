@@ -1,0 +1,40 @@
+vim.opt.shell         = '/bin/sh'
+vim.opt.mouse         = 'a'
+vim.opt.expandtab     = true                    -- tabs instead of spaces
+vim.opt.shiftwidth    = 4                       -- shift 4 spaces when tab
+vim.opt.tabstop       = 4                       -- 1 tab == 4 spaces
+vim.opt.smartindent   = true                    -- autoindent new lines
+vim.opt.wrap          = false
+vim.opt.splitbelow    = true
+vim.opt_splitright    = true
+vim.opt.smd           = true
+vim.opt.number        = true
+vim.opt.termguicolors = true
+vim.opt.ignorecase    = true
+vim.opt.showmatch     = true                    -- highlight matching parenthesis
+vim.opt.colorcolumn   = '80'
+vim.opt.completeopt   = 'menu,menuone,noselect'
+vim.opt.clipboard     = 'unnamedplus'           -- copy/paste to system clipboard
+vim.g.mapleader       = ','
+
+require('cfg_packer')         -- Load plugins manager
+require('cfg_catppucino')     -- Load and configure colors
+require('cfg_lualine')        -- Load and configure statusline
+require('cfg_treesitter')     -- Syntax highlighting
+require('cfg_completion')     -- Completion
+require('cfg_lsp')            -- LSP
+require('cfg_kommentary')     -- Comment code out
+require('cfg_gitsigns')       -- Git line highlighting
+require('cfg_barbar')         -- Normal tabs
+require('cfg_telescope')      -- Finder
+
+vim.api.nvim_set_keymap('n', '<leader>ff', ':lua require(\'telescope.builtin\').find_files()<cr>',
+                        { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fg', ':lua require(\'telescope.builtin\').live_grep()<cr>',
+                        { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fb', ':lua require(\'telescope.builtin\').buffers()<cr>',
+                        { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fd', ':lua require(\'telescope.builtin\').lsp_definitions()<cr>',
+                        { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fr', ':lua require(\'telescope.builtin\').lsp_references()<cr>',
+                        { noremap = true, silent = true })
