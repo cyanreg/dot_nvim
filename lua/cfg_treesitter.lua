@@ -1,8 +1,8 @@
 local treesitter = require('nvim-treesitter.configs')
 
 treesitter.setup({
-    ensure_installed = "c", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-    ignore_install = { },   -- List of parsers to ignore installing
+    ensure_installed = { "c", "lua", "latex" }, -- one of "all", "maintained", or a list
+    ignore_install = { },        -- List of parsers to ignore installing
     highlight = {
         enable = true,         -- false will disable the whole extension
         disable = { "rust" },  -- list of language that will be disabled
