@@ -28,6 +28,11 @@ require('cfg_gitsigns')       -- Git line highlighting
 require('cfg_barbar')         -- Normal tabs
 require('cfg_telescope')      -- Finder
 
+vim.api.nvim_set_keymap('n', '<A-h>', ':wincmd h<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-j>', ':wincmd j<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-k>', ':wincmd k<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-l>', ':wincmd l<CR>', { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap('n', '<leader>ff', ':lua require(\'telescope.builtin\').find_files()<cr>',
                         { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fg', ':lua require(\'telescope.builtin\').live_grep()<cr>',
