@@ -13,7 +13,8 @@ return require('packer').startup(function()
     use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = false } }
     use { 'yamatsum/nvim-cursorline' }
     use { 'L3MON4D3/LuaSnip' }
-    use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use { 'ggandor/lightspeed.nvim' }
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim', opt = false },
                                                         { 'kyazdani42/nvim-web-devicons', opt = false },
                                                         { 'nvim-telescope/telescope-fzf-native.nvim', opt = true } } }
