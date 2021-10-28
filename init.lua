@@ -15,7 +15,6 @@ vim.opt.showmatch     = true                    -- highlight matching parenthesi
 vim.opt.colorcolumn   = '80'
 vim.opt.completeopt   = 'menu,menuone,noselect'
 vim.opt.clipboard     = 'unnamedplus'           -- copy/paste to system clipboard
-vim.g.mapleader       = ','
 
 require('cfg_packer')         -- Load plugins manager
 require('cfg_catppucino')     -- Load and configure colors
@@ -28,18 +27,24 @@ require('cfg_gitsigns')       -- Git line highlighting
 require('cfg_barbar')         -- Normal tabs
 require('cfg_telescope')      -- Finder
 
-vim.api.nvim_set_keymap('n', '<A-h>', ':wincmd h<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<A-j>', ':wincmd j<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<A-k>', ':wincmd k<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', '<A-l>', ':wincmd l<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-j>', ':set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-D>:set scroll=0<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<A-k>', ':set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-U>:set scroll=0<CR>', { noremap = true, silent = true })
 
+vim.g.mapleader = ','
+--[[ Builtin ]]--
 vim.api.nvim_set_keymap('n', '<leader>ff', ':lua require(\'telescope.builtin\').find_files()<cr>',
                         { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fg', ':lua require(\'telescope.builtin\').live_grep()<cr>',
                         { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fb', ':lua require(\'telescope.builtin\').buffers()<cr>',
                         { noremap = true, silent = true })
+
+--[[ LSP ]]--
 vim.api.nvim_set_keymap('n', '<leader>fd', ':lua require(\'telescope.builtin\').lsp_definitions()<cr>',
                         { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fr', ':lua require(\'telescope.builtin\').lsp_references()<cr>',
+                        { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fs', ':lua require(\'telescope.builtin\').lsp_dynamic_workspace_symbols()<cr>',
+                        { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<leader>fl', ':lua require(\'telescope.builtin\').lsp_document_diagnostics()<cr>',
                         { noremap = true, silent = true })
