@@ -21,7 +21,7 @@ require('cfg_catppucino')     -- Load and configure colors
 require('cfg_lualine')        -- Load and configure statusline
 require('cfg_treesitter')     -- Syntax highlighting
 require('cfg_completion')     -- Completion
-require('cfg_lsp')            -- LSP
+require('cfg_lsp')            -- LSP (must be after completion)
 require('cfg_kommentary')     -- Comment code out
 require('cfg_gitsigns')       -- Git line highlighting
 require('cfg_barbar')         -- Normal tabs
