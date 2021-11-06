@@ -27,8 +27,12 @@ require('cfg_gitsigns')       -- Git line highlighting
 require('cfg_barbar')         -- Normal tabs
 require('cfg_telescope')      -- Finder
 
+--[[ Scroll without changing cursor position ]]--
 vim.api.nvim_set_keymap('n', '<A-j>', ':set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-D>:set scroll=0<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-k>', ':set scroll=0<CR>:set scroll^=2<CR>:set scroll-=1<CR><C-U>:set scroll=0<CR>', { noremap = true, silent = true })
+
+--[[ Esc to clear search ]]--
+vim.api.nvim_set_keymap('n', '<Esc>', ':noh<cr>', { noremap = true, silent = true })
 
 vim.g.mapleader = ','
 --[[ Builtin ]]--
