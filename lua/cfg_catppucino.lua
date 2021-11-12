@@ -63,7 +63,7 @@ local err, colors = cp_api.get_colors("soft_manilo")
 
 if err.status then -- good
     catppuccino.remap({
-        bg = "#29272d"
+        bg = "#121017"
     })
 end
 
