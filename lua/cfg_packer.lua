@@ -3,7 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
     use { 'wbthomason/packer.nvim' }
     use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
-    use { 'Pocco81/Catppuccino.nvim' }
+    use { 'catppuccin/nvim' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', branch = '0.5-compat' }
     use { 'neovim/nvim-lspconfig' }
     use { 'b3nj5m1n/kommentary' }

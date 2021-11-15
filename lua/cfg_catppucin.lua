@@ -1,9 +1,9 @@
-local catppuccino = require("catppuccino")
+local catppuccin = require("catppuccin")
 
-catppuccino.setup({
-    -- colorscheme = "dark_catppuccino",
+catppuccin.setup({
+    -- colorscheme = "dark_catppuccin",
     -- colorscheme = "neon_latte",
-    colorscheme = "soft_manilo",
+--    colorscheme = "catppuccin",
     -- colorscheme = "light_melya",
     transparency = false,
     term_colors = true,
@@ -58,13 +58,15 @@ catppuccino.setup({
     }
 })
 
-local cp_api = require("catppuccino.api.colors")
-local err, colors = cp_api.get_colors("soft_manilo")
+--[[
+local cp_api = require("catppuccin.api.colors")
+local err, colors = cp_api.get_colors("catppuccin")
 
 if err.status then -- good
-    catppuccino.remap({
+    catppuccin.remap({
         bg = "#121017"
     })
 end
+]]--
 
-vim.cmd[[colorscheme catppuccino]]
+vim.cmd[[colorscheme catppuccin]]

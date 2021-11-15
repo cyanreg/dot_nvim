@@ -17,7 +17,7 @@ vim.opt.completeopt   = 'menu,menuone,noselect'
 vim.opt.clipboard     = 'unnamedplus'           -- copy/paste to system clipboard
 
 require('cfg_packer')         -- Load plugins manager
-require('cfg_catppucino')     -- Load and configure colors
+require('cfg_catppucin')      -- Load and configure colors
 require('cfg_lualine')        -- Load and configure statusline
 require('cfg_treesitter')     -- Syntax highlighting
 require('cfg_completion')     -- Completion
