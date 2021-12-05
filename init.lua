@@ -15,6 +15,8 @@ vim.opt.showmatch     = true                    -- highlight matching parenthesi
 vim.opt.colorcolumn   = '80'
 vim.opt.completeopt   = 'menu,menuone,noselect'
 vim.opt.clipboard     = 'unnamedplus'           -- copy/paste to system clipboard
+vim.opt.hidden        = true
+vim.g.mapleader       = ','
 
 require('cfg_packer')         -- Load plugins manager
 require('cfg_catppucin')      -- Load and configure colors
@@ -30,10 +32,11 @@ require('cfg_telescope')      -- Finder
 vim.api.nvim_set_keymap('n', '<A-j>', '<C-d>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-k>', '<C-u>', { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('n', '<leader>;', ':exe "normal A;"<cr>', { noremap = true, silent = true })
+
 --[[ Esc to clear search ]]--
 vim.api.nvim_set_keymap('n', '<Esc>', ':noh<cr>', { noremap = true, silent = true })
 
-vim.g.mapleader = ','
 --[[ Builtin ]]--
 vim.api.nvim_set_keymap('n', '<leader>ff', ':lua require(\'telescope.builtin\').find_files()<cr>',
                         { noremap = true, silent = true })
