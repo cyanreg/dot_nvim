@@ -16,7 +16,7 @@ return require('packer').startup(function()
     use { 'saadparwaiz1/cmp_luasnip' }
     use { 'ggandor/lightspeed.nvim' }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim', opt = false },
+    use { 'nvim-telescope/telescope.nvim', commit = '80cdb00b221f69348afc4fb4b701f51eb8dd3120', requires = { { 'nvim-lua/plenary.nvim', opt = false },
                                                         { 'kyazdani42/nvim-web-devicons', opt = false },
                                                         { 'nvim-telescope/telescope-fzf-native.nvim', opt = true } } }
 end)
