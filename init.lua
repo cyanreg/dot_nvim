@@ -3,6 +3,7 @@ vim.opt.mouse         = 'a'
 vim.opt.expandtab     = true                    -- tabs instead of spaces
 vim.opt.shiftwidth    = 4                       -- shift 4 spaces when tab
 vim.opt.tabstop       = 4                       -- 1 tab == 4 spaces
+vim.opt.softtabstop   = 4                       -- same
 vim.opt.smartindent   = true                    -- autoindent new lines
 vim.opt.wrap          = false
 vim.opt.splitbelow    = true
