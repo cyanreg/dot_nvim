@@ -6,6 +6,9 @@ treesitter.setup({
     -- one of "all", "maintained", or a list
     ensure_installed = "maintained",
     ignore_install = { },        -- List of parsers to ignore installing
+    indent = {
+        enable = true,
+    },
     highlight = {
         enable = true,         -- false will disable the whole extension
 --        disable = { "" },  -- list of language that will be disabled

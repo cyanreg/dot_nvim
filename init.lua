@@ -29,6 +29,7 @@ require('cfg_kommentary')     -- Comment code out
 require('cfg_gitsigns')       -- Git line highlighting
 require('cfg_barbar')         -- Normal tabs
 require('cfg_telescope')      -- Finder
+require('cfg_indent')         -- Indentation guides
 
 vim.api.nvim_set_keymap('n', '<A-j>', '<C-d>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-k>', '<C-u>', { noremap = true, silent = true })

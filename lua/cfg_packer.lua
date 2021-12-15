@@ -15,6 +15,7 @@ return require('packer').startup(function()
     use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp', opt = true } }
     use { 'saadparwaiz1/cmp_luasnip' }
     use { 'ggandor/lightspeed.nvim' }
+    use { 'lukas-reineke/indent-blankline.nvim' }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'nvim-telescope/telescope.nvim', commit = '80cdb00b221f69348afc4fb4b701f51eb8dd3120', requires = { { 'nvim-lua/plenary.nvim', opt = false },
                                                         { 'kyazdani42/nvim-web-devicons', opt = false },
