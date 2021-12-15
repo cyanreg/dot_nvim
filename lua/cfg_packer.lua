@@ -17,7 +17,8 @@ return require('packer').startup(function()
     use { 'ggandor/lightspeed.nvim' }
     use { 'lukas-reineke/indent-blankline.nvim' }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use { 'nvim-telescope/telescope.nvim', commit = '80cdb00b221f69348afc4fb4b701f51eb8dd3120', requires = { { 'nvim-lua/plenary.nvim', opt = false },
-                                                        { 'kyazdani42/nvim-web-devicons', opt = false },
-                                                        { 'nvim-telescope/telescope-fzf-native.nvim', opt = true } } }
+    use { 'nvim-telescope/telescope.nvim', commit = '80cdb00b221f69348afc4fb4b701f51eb8dd3120',
+          requires = { { 'nvim-lua/plenary.nvim', opt = false },
+                       { 'kyazdani42/nvim-web-devicons', opt = false },
+                       { 'nvim-telescope/telescope-fzf-native.nvim', opt = true } } }
 end)
