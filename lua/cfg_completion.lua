@@ -64,10 +64,21 @@ cmp.setup({
             { "i", "s" }
         ),
 
-        ['<CR>'] = cmp.mapping.confirm({
-            behavior = cmp.ConfirmBehavior.Replace,
-            select = false,
-        }),
+        ['<CR>'] = cmp.mapping(
+            function(fallback)
+                if luasnip.expand_or_jumpable() and cmp.get_selected_entry() == nil then
+                    luasnip.expand_or_jump()
+                elseif cmp.visible() and cmp.get_selected_entry() ~= nil then
+                    cmp.confirm({ select = false, behavior = cmp.ConfirmBehavior.Replace })
+                    if luasnip.expand_or_jumpable() then
+                        luasnip.expand_or_jump()
+                    end
+                else
+                    fallback()
+                end
+            end,
+            { "i", "s" }
+        ),
     },
     sources = cmp.config.sources({
           { name = 'nvim_lsp' },
