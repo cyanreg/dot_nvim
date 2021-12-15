@@ -12,6 +12,7 @@ lsp.clangd.setup({
             "--pch-storage=memory",
             "--inlay-hints",
             "--header-insertion=never",
+--            "--completion-style=bundled",
     },
     filetypes = { "c", "h", "cpp", "hpp", "objc", "objcpp" },
 })

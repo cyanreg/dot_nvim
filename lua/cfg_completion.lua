@@ -66,7 +66,7 @@ cmp.setup({
 
         ['<CR>'] = cmp.mapping.confirm({
             behavior = cmp.ConfirmBehavior.Replace,
-            select = true,
+            select = false,
         }),
     },
     sources = cmp.config.sources({
