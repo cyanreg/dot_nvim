@@ -1,3 +1,5 @@
+require("nvim-treesitter.install").prefer_git = true
+
 local treesitter = require('nvim-treesitter.configs')
 
 treesitter.setup({
