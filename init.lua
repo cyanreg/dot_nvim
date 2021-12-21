@@ -33,6 +33,9 @@ require('cfg_indent')         -- Indentation guides
 
 vim.api.nvim_set_keymap('n', '<leader>c', ':set so=999<cr>:set so=0<cr>', { noremap = true, silent = true })
 
+vim.api.nvim_set_keymap('n', '<C-h>', ':wincmd h<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-l>', ':wincmd l<CR>', { noremap = true, silent = true })
+
 vim.api.nvim_set_keymap('n', '<A-j>', '<C-d>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-k>', '<C-u>', { noremap = true, silent = true })
 
