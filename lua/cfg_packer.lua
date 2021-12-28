@@ -6,8 +6,10 @@ return require('packer').startup(function()
     use { 'catppuccin/nvim' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', branch = 'master' }
     use { 'neovim/nvim-lspconfig' }
-    use { 'b3nj5m1n/kommentary' }
+    use { 'JoosepAlviste/nvim-ts-context-commentstring' }
+    use { 'https://github.com/numToStr/Comment.nvim' }
     use { 'p00f/nvim-ts-rainbow' }
+    use { 'edluffy/specs.nvim' }
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim', opt = false } }
     use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = false } }
     use { 'yamatsum/nvim-cursorline' }
