@@ -13,7 +13,8 @@ vim.opt.number        = true
 vim.opt.termguicolors = true
 vim.opt.ignorecase    = true
 vim.opt.showmatch     = true                    -- highlight matching parenthesis
-vim.opt.colorcolumn   = '80'
+vim.opt.textwidth     = 0
+vim.opt.colorcolumn   = '81'
 vim.opt.completeopt   = 'menu,menuone,noselect'
 vim.opt.clipboard     = 'unnamedplus'           -- copy/paste to system clipboard
 vim.opt.hidden        = true
@@ -27,6 +28,7 @@ require('cfg_completion')     -- Completion
 require('cfg_lsp')            -- LSP (must be after completion)
 require('cfg_specs')          -- Cursor highlight
 require('cfg_todo')           -- Todo highlights
+require('cfg_column')         -- Limit column
 require('cfg_comment')        -- Comment code out
 require('cfg_gitsigns')       -- Git line highlighting
 require('cfg_barbar')         -- Normal tabs

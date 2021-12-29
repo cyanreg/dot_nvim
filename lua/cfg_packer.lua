@@ -19,6 +19,7 @@ return require('packer').startup(function()
     use { 'saadparwaiz1/cmp_luasnip' }
     use { 'ggandor/lightspeed.nvim' }
     use { 'lukas-reineke/indent-blankline.nvim' }
+    use { 'lukas-reineke/virt-column.nvim' }
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim', opt = false },
                                                         { 'kyazdani42/nvim-web-devicons', opt = false },
