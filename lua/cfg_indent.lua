@@ -1,17 +1,47 @@
 local indent = require("indent_blankline")
 
+local colors = require'catppuccin.api.colors'.get_colors()
+
+colors_list = {
+    ["IndentBlanklineIndent1"] = { gui = "nocombine", bg = colors.catppuccin1,  fg = colors.catppuccin1  },
+    ["IndentBlanklineIndent2"] = { gui = "nocombine", bg = colors.catppuccin14, fg = colors.catppuccin14 },
+}
+
+for name, style in pairs(colors_list) do
+    vim.api.nvim_command(
+         [[highlight ]]
+         .. name .. ' ' ..
+         'guifg=' .. style.fg .. ' ' ..
+         'guibg=' .. style.bg .. ' ' ..
+         'gui=' ..   style.gui
+    )
+end
+
 indent.setup({
---    enabled = false,
+    char = "",
+    char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+    },
+    space_char_highlight_list = {
+        "IndentBlanklineIndent1",
+        "IndentBlanklineIndent2",
+    },
+    show_trailing_blankline_indent = false,
+    show_first_indent_level = false,
+
     max_indent_increase = 1,
 
     use_treesitter = true,
-    show_current_context = true,
-    show_current_context_start = true,
-
-    show_first_indent_level = false,
-    show_trailing_blankline_indent = false,
+    show_current_context = false,
+    show_current_context_start = false,
+    show_current_context_start_on_current_line = false,
 
     show_end_of_line = false,
 
     show_foldtext = false,
+    strict_tabs   = false,
+
+    filetype_exclude = { 'help' },
+    buftype_exclude  = { 'terminal' },
 })

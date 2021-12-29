@@ -1,17 +1,13 @@
 local catppuccin = require("catppuccin")
 
 catppuccin.setup({
-    -- colorscheme = "dark_catppuccin",
-    -- colorscheme = "neon_latte",
---    colorscheme = "catppuccin",
-    -- colorscheme = "light_melya",
     transparency = false,
-    term_colors = true,
+    term_colors  = true,
     styles = {
-        comments = "NONE",
+        comments  = "NONE",
         functions = "NONE",
-        keywords = "bold",
-        strings = "NONE",
+        keywords  = "bold",
+        strings   = "NONE",
         variables = "NONE",
     },
     integrations = {
@@ -19,15 +15,15 @@ catppuccin.setup({
         native_lsp = {
             enabled = true,
             virtual_text = {
-                errors = "italic",
-                hints = "italic",
-                warnings = "italic",
+                errors      = "italic",
+                hints       = "italic",
+                warnings    = "italic",
                 information = "italic",
             },
             underlines = {
-                errors = "underline",
-                hints = "underline",
-                warnings = "underline",
+                errors      = "underline",
+                hints       = "underline",
+                warnings    = "underline",
                 information = "underline",
             }
         },

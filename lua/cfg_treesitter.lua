@@ -7,7 +7,7 @@ treesitter.setup({
     ensure_installed = "maintained",
     ignore_install = { },        -- List of parsers to ignore installing
     indent = {
-        enable = true,
+        enable = false,
     },
     highlight = {
         enable = true,         -- false will disable the whole extension
@@ -22,6 +22,15 @@ treesitter.setup({
     rainbow = {
         enable = true,
         extended_mode = true, -- Also highlight non-bracket delimiters like html tags, boolean or table: lang -> boolean
-        max_file_lines = nil
-    }
+        max_file_lines = nil,
+    },
+    incremental_selection = {
+        enable = true,
+        keymaps = {
+            init_selection = "gnn",
+            node_incremental = "grn",
+            scope_incremental = "grc",
+            node_decremental = "grm",
+        },
+    },
 })
