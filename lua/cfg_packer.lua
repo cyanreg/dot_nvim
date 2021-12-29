@@ -5,6 +5,7 @@ return require('packer').startup(function()
     use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
     use { 'catppuccin/nvim' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', branch = 'master' }
+    use { 'nvim-treesitter/nvim-treesitter-refactor', requires = 'nvim-treesitter/nvim-treesitter' }
     use { 'neovim/nvim-lspconfig' }
     use { 'folke/todo-comments.nvim' }
     use { 'JoosepAlviste/nvim-ts-context-commentstring' }

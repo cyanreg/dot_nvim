@@ -6,6 +6,16 @@ treesitter.setup({
     -- one of "all", "maintained", or a list
     ensure_installed = "maintained",
     ignore_install = { },        -- List of parsers to ignore installing
+    refactor = {
+        highlight_definitions   = { enable = false },
+        highlight_current_scope = { enable = false },
+        smart_rename = {
+            enable = true,
+            keymaps = {
+                smart_rename = "grr",
+            },
+        },
+    },
     indent = {
         enable = false,
     },
