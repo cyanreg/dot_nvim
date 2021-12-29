@@ -14,6 +14,7 @@ return require('packer').startup(function()
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim', opt = false } }
     use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = false } }
     use { 'yamatsum/nvim-cursorline' }
+    use { 'Xuyuanp/scrollbar.nvim' }
     use { 'L3MON4D3/LuaSnip' }
     use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp', opt = true } }
     use { 'saadparwaiz1/cmp_luasnip' }

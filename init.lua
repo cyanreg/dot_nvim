@@ -66,3 +66,14 @@ vim.api.nvim_set_keymap('n', '<leader>fs', ':lua require(\'telescope.builtin\').
                         { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fl', ':lua require(\'telescope.builtin\').lsp_document_diagnostics()<cr>',
                         { noremap = true, silent = true })
+
+--[[ Scrollbar ]]--
+vim.api.nvim_exec(
+[[
+    augroup ScrollbarInit
+    autocmd!
+    autocmd WinScrolled,VimResized,QuitPre          * silent! lua require('scrollbar').show()
+    autocmd WinEnter,FocusGained                    * silent! lua require('scrollbar').show()
+    autocmd WinLeave,BufLeave,BufWinLeave,FocusLost * silent! lua require('scrollbar').clear()
+    augroup end
+]], false)
