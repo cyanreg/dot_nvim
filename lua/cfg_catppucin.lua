@@ -52,7 +52,7 @@ catppuccin.setup({
         barbar = true,
         bufferline = false,
         markdown = true,
-        lightspeed = false,
+        lightspeed = true,
         ts_rainbow = true,
         hop = false,
         cmp = true,

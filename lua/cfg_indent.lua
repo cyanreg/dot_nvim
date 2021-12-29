@@ -1,7 +1,7 @@
 local indent = require("indent_blankline")
 
 indent.setup({
-    -- enabled = false,
+--    enabled = false,
     max_indent_increase = 1,
 
     use_treesitter = true,
