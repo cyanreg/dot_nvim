@@ -29,6 +29,7 @@ require('cfg_lsp')            -- LSP (must be after completion)
 require('cfg_specs')          -- Cursor highlight
 require('cfg_todo')           -- Todo highlights
 require('cfg_column')         -- Limit column
+require('cfg_scrollview')     -- Scrollbar
 require('cfg_comment')        -- Comment code out
 require('cfg_gitsigns')       -- Git line highlighting
 require('cfg_barbar')         -- Normal tabs
@@ -66,14 +67,3 @@ vim.api.nvim_set_keymap('n', '<leader>fs', ':lua require(\'telescope.builtin\').
                         { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fl', ':lua require(\'telescope.builtin\').lsp_document_diagnostics()<cr>',
                         { noremap = true, silent = true })
-
---[[ Scrollbar ]]--
-vim.api.nvim_exec(
-[[
-    augroup ScrollbarInit
-    autocmd!
-    autocmd WinScrolled,VimResized,QuitPre          * silent! lua require('scrollbar').show()
-    autocmd WinEnter,FocusGained                    * silent! lua require('scrollbar').show()
-    autocmd WinLeave,BufLeave,BufWinLeave,FocusLost * silent! lua require('scrollbar').clear()
-    augroup end
-]], false)

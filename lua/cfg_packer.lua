@@ -3,7 +3,7 @@ vim.cmd [[packadd packer.nvim]]
 return require('packer').startup(function()
     use { 'wbthomason/packer.nvim' }
     use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
-    use { 'catppuccin/nvim' }
+    use { 'catppuccin/nvim', as = "catppuccin" }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', branch = 'master' }
     use { 'nvim-treesitter/nvim-treesitter-refactor', requires = 'nvim-treesitter/nvim-treesitter' }
     use { 'nvim-treesitter/nvim-treesitter-textobjects', requires = 'nvim-treesitter/nvim-treesitter' }
@@ -16,7 +16,7 @@ return require('packer').startup(function()
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim', opt = false } }
     use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = false } }
     use { 'yamatsum/nvim-cursorline' }
-    use { 'Xuyuanp/scrollbar.nvim' }
+    use { 'dstein64/nvim-scrollview' }
     use { 'L3MON4D3/LuaSnip' }
     use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp', opt = true } }
     use { 'saadparwaiz1/cmp_luasnip' }
