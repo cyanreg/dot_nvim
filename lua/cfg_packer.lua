@@ -18,8 +18,19 @@ return require('packer').startup(function()
     use { 'yamatsum/nvim-cursorline' }
     use { 'dstein64/nvim-scrollview' }
     use { 'L3MON4D3/LuaSnip' }
-    use { 'hrsh7th/nvim-cmp', requires = { 'hrsh7th/cmp-nvim-lsp', opt = true } }
+
+    -- Completion
+    use { 'hrsh7th/nvim-cmp' }
+    use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'hrsh7th/cmp-buffer' }
+    use { 'hrsh7th/cmp-path' }
+    use { 'hrsh7th/cmp-cmdline' }
+    use { 'hrsh7th/cmp-calc' }
+    use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
     use { 'saadparwaiz1/cmp_luasnip' }
+    use { 'onsails/lspkind-nvim' }
+    use { 'kdheepak/cmp-latex-symbols' }
+
     use { 'ggandor/lightspeed.nvim' }
     use { 'lukas-reineke/indent-blankline.nvim' }
     use { 'lukas-reineke/virt-column.nvim' }
