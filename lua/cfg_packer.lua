@@ -6,6 +6,7 @@ return require('packer').startup(function()
     use { 'catppuccin/nvim' }
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', branch = 'master' }
     use { 'nvim-treesitter/nvim-treesitter-refactor', requires = 'nvim-treesitter/nvim-treesitter' }
+    use { 'nvim-treesitter/nvim-treesitter-textobjects', requires = 'nvim-treesitter/nvim-treesitter' }
     use { 'neovim/nvim-lspconfig' }
     use { 'folke/todo-comments.nvim' }
     use { 'JoosepAlviste/nvim-ts-context-commentstring' }

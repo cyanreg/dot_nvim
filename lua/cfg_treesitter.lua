@@ -1,4 +1,4 @@
-require("nvim-treesitter.install").prefer_git = true
+--require("nvim-treesitter.install").prefer_git = true
 
 local treesitter = require('nvim-treesitter.configs')
 
@@ -13,6 +13,36 @@ treesitter.setup({
             enable = true,
             keymaps = {
                 smart_rename = "grr",
+            },
+        },
+    },
+    textobjects = {
+        move = {
+            enable    = true,
+            set_jumps = true, -- whether to set jumps in the jumplist
+            goto_next_start = {
+                ["]m"] = "@function.outer",
+                ["]]"] = "@class.outer",
+            },
+            goto_next_end = {
+                ["]M"] = "@function.outer",
+                ["]["] = "@class.outer",
+            },
+            goto_previous_start = {
+                ["[m"] = "@function.outer",
+                ["[["] = "@class.outer",
+            },
+            goto_previous_end = {
+                ["[M"] = "@function.outer",
+                ["[]"] = "@class.outer",
+            },
+        },
+        lsp_interop = {
+            enable = true,
+            border = 'single',
+            peek_definition_code = {
+                ["<leader>df"] = "@function.outer",
+                ["<leader>dF"] = "@class.outer",
             },
         },
     },
@@ -37,10 +67,10 @@ treesitter.setup({
     incremental_selection = {
         enable = true,
         keymaps = {
-            init_selection = "gnn",
-            node_incremental = "grn",
+            init_selection    = "gnn",
+            node_incremental  = "grn",
             scope_incremental = "grc",
-            node_decremental = "grm",
+            node_decremental  = "grm",
         },
     },
 })
