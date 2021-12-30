@@ -33,6 +33,7 @@ require('cfg_scrollview')     -- Scrollbar
 require('cfg_comment')        -- Comment code out
 require('cfg_gitsigns')       -- Git line highlighting
 require('cfg_barbar')         -- Normal tabs
+require('cfg_neoclip')        -- Clipboard
 require('cfg_telescope')      -- Finder
 require('cfg_indent')         -- Indentation guides
 
@@ -66,4 +67,8 @@ vim.api.nvim_set_keymap('n', '<leader>fr', ':lua require(\'telescope.builtin\').
 vim.api.nvim_set_keymap('n', '<leader>fs', ':lua require(\'telescope.builtin\').lsp_dynamic_workspace_symbols()<cr>',
                         { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<leader>fl', ':lua require(\'telescope.builtin\').lsp_document_diagnostics()<cr>',
+                        { noremap = true, silent = true })
+
+--[[ Clipboard ]]--
+vim.api.nvim_set_keymap('n', '<leader>cc', ':lua require(\'telescope\').extensions.neoclip.default()<cr>',
                         { noremap = true, silent = true })

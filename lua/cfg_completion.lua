@@ -7,34 +7,6 @@ local has_words_before = function()
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-local kind_icons = {
-    Text = "",
-    Method = "",
-    Function = "",
-    Constructor = "",
-    Field = "",
-    Variable = "",
-    Class = "ﴯ",
-    Interface = "",
-    Module = "",
-    Property = "ﰠ",
-    Unit = "",
-    Value = "",
-    Enum = "",
-    Keyword = "",
-    Snippet = "",
-    Color = "",
-    File = "",
-    Reference = "",
-    Folder = "",
-    EnumMember = "",
-    Constant = "",
-    Struct = "",
-    Event = "",
-    Operator = "",
-    TypeParameter = "",
-}
-
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -49,20 +21,16 @@ cmp.setup({
         ghost_text = { hl_group = "Comment" },
     },
     formatting = {
-        format = function(entry, vim_item)
-            -- Kind icons
-            -- This concatonates the icons with the name of the item kind
-            vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
-            -- Source
-            vim_item.menu = ({
+        format = lspkind.cmp_format({
+            with_text = true,
+            menu = ({
                 buffer        = "[Buffer]",
                 nvim_lsp      = "[LSP]",
                 luasnip       = "[LuaSnip]",
                 nvim_lua      = "[Lua]",
-                latex_symbols = "[LaTeX]",
-            })[entry.source.name]
-            return vim_item
-        end
+                latex_symbols = "[Latex]",
+            })
+        })
     },
     mapping = {
         -- Close
@@ -125,31 +93,37 @@ cmp.setup({
             { "i", "s" }
         ),
     },
-    sources = cmp.config.sources({
+    sources = cmp.config.sources(
+        {
             { name = 'nvim_lsp' },
             { name = 'luasnip' }, -- For luasnip users.
         }, {
             { name = 'latex_symbols' },
             { name = 'buffer' },
             { name = 'calc' },
-    })
+        }
+    )
 })
 
 -- Use buffer source for `/`.
 cmp.setup.cmdline('/', {
-    sources = cmp.config.sources({
+    sources = cmp.config.sources(
+        {
             { name = 'nvim_lsp_document_symbol' },
         }, {
             { name = 'buffer' },
-    })
+        }
+    )
 })
 
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
+    sources = cmp.config.sources(
+        {
             { name = 'path' },
         }, {
             { name = 'cmdline' },
             { name = 'calc' }
-    })
+        }
+    )
 })

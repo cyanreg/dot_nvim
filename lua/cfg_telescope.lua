@@ -1,12 +1,14 @@
-local finder = require('telescope')
+local telescope = require('telescope')
 
-finder.setup({
+telescope.setup({
     defaults = {
-        
+        dynamic_preview_title = true,
     },
     pickers = {
         find_files = {
         },
     },
 })
-require('telescope').load_extension('fzf')
+
+telescope.load_extension('fzf')
+telescope.load_extension('neoclip')
