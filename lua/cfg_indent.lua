@@ -4,7 +4,7 @@ local colors = require'catppuccin.api.colors'.get_colors()
 
 colors_list = {
     ["IndentBlanklineIndent1"] = { gui = "nocombine", bg = colors.catppuccin1,  fg = colors.catppuccin1  },
-    ["IndentBlanklineIndent2"] = { gui = "nocombine", bg = colors.catppuccin14, fg = colors.catppuccin14 },
+    ["IndentBlanklineIndent2"] = { gui = "nocombine", bg = colors.catppuccin13, fg = colors.catppuccin13 },
 }
 
 for name, style in pairs(colors_list) do
