@@ -3,15 +3,14 @@ local indent = require("indent_blankline")
 local colors = require'catppuccin.api.colors'.get_colors()
 
 colors_list = {
-    ["IndentBlanklineIndent1"] = { gui = "nocombine", bg = colors.catppuccin1,  fg = colors.catppuccin1  },
-    ["IndentBlanklineIndent2"] = { gui = "nocombine", bg = colors.catppuccin13, fg = colors.catppuccin13 },
+    ["IndentBlanklineIndent1"] = { gui = "nocombine", bg = colors.catppuccin1  },
+    ["IndentBlanklineIndent2"] = { gui = "nocombine", bg = colors.catppuccin13 },
 }
 
 for name, style in pairs(colors_list) do
     vim.api.nvim_command(
          [[highlight ]]
          .. name .. ' ' ..
-         'guifg=' .. style.fg .. ' ' ..
          'guibg=' .. style.bg .. ' ' ..
          'gui=' ..   style.gui
     )
