@@ -4,9 +4,10 @@ lualine.setup({
     options = {
         icons_enabled = true,
         theme = 'catppuccin',
-        component_separators = { '', '' },
-        section_separators = { '', '' },
-        disabled_filetypes = { }
+        section_separators = { left = '', right = ''},
+        component_separators = { left = '', right = ''},
+        disabled_filetypes = { },
+        padding = 2,
     },
     filetype_names = {
         TelescopePrompt = 'Telescope',
