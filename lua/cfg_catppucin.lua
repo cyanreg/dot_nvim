@@ -39,7 +39,7 @@ catppuccin.setup({
         which_key = false,
         indent_blankline = {
             enabled = true,
-            colored_indent_levels = true,
+            colored_indent_levels = false,
         },
         dashboard = false,
         neogit = false,
