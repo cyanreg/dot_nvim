@@ -3,8 +3,8 @@ local indent = require("indent_blankline")
 local colors = require'catppuccin.api.colors'.get_colors()
 
 colors_list = {
-    ["IndentBlanklineIndent1"] = { gui = "nocombine", bg = colors.catppuccin1  },
-    ["IndentBlanklineIndent2"] = { gui = "nocombine", bg = colors.catppuccin13 },
+    ["IndentBlanklineIndent1"] = { gui = "nocombine", bg = colors.black2 },
+    ["IndentBlanklineIndent2"] = { gui = "nocombine", bg = colors.black0 },
 }
 
 for name, style in pairs(colors_list) do
