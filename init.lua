@@ -18,6 +18,7 @@ vim.opt.colorcolumn   = '81'
 vim.opt.completeopt   = 'menu,menuone,noselect'
 vim.opt.clipboard     = 'unnamedplus'           -- copy/paste to system clipboard
 vim.opt.hidden        = true
+vim.opt.signcolumn    = 'no'                    -- disable signscolumn
 vim.g.mapleader       = ','
 
 require('cfg_packer')         -- Load plugins manager
