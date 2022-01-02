@@ -52,6 +52,8 @@ catppuccin.setup({
         ts_rainbow = true,
         hop = false,
         cmp = true,
+        notify = false,
+        telekasten = false,
     }
 })
 
