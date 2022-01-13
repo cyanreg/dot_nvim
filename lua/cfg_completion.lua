@@ -8,6 +8,18 @@ local has_words_before = function()
 end
 
 cmp.setup({
+    enabled = function()
+        local ctx = require"cmp.config.context"
+        if ctx.in_treesitter_capture("comment") == true or
+           ctx.in_treesitter_capture("string") == true or
+           ctx.in_syntax_group("Comment") == true or
+           ctx.in_syntax_group("String") == true then
+            return false
+        else
+            return true
+        end
+    end,
+
     snippet = {
         expand = function(args)
             require('luasnip').lsp_expand(args.body)

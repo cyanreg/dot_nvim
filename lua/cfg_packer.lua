@@ -19,6 +19,8 @@ return require('packer').startup(function()
     use { 'dstein64/nvim-scrollview' }
     use { 'L3MON4D3/LuaSnip' }
 
+    use { 'windwp/nvim-autopairs' }
+
     -- Completion
     use { 'hrsh7th/nvim-cmp' }
     use { 'hrsh7th/cmp-nvim-lsp' }
@@ -36,6 +38,8 @@ return require('packer').startup(function()
     use { 'lukas-reineke/virt-column.nvim' }
 
     use { 'AckslD/nvim-neoclip.lua' }
+
+    use { 'nathom/filetype.nvim' }
 
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim', opt = false },

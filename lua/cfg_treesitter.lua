@@ -4,7 +4,10 @@ local treesitter = require('nvim-treesitter.configs')
 
 treesitter.setup({
     -- one of "all", "maintained", or a list
-    ensure_installed = "maintained",
+    ensure_installed = { "c", "bash", "comment", "css", "cuda",
+                         "dot", "glsl", "html", "julia", "latex",
+                         "lua", "make", "python", "rst", "json", },
+
     ignore_install = { },        -- List of parsers to ignore installing
     refactor = {
         highlight_definitions   = { enable = false },
