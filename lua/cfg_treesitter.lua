@@ -41,8 +41,8 @@ treesitter.setup({
             enable = true,
             border = 'single',
             peek_definition_code = {
-                ["<leader>df"] = "@function.outer",
-                ["<leader>dF"] = "@class.outer",
+                ["<leader>dF"] = "@function.outer",
+                ["<leader>df"] = "@class.outer",
             },
         },
     },
