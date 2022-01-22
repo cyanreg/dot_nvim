@@ -31,7 +31,6 @@ return require('packer').startup(function()
     use { 'hrsh7th/cmp-nvim-lsp-document-symbol' }
     use { 'saadparwaiz1/cmp_luasnip' }
     use { 'onsails/lspkind-nvim' }
-    use { 'kdheepak/cmp-latex-symbols' }
 
     use { 'ggandor/lightspeed.nvim' }
     use { 'lukas-reineke/indent-blankline.nvim' }

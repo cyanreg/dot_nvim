@@ -5,7 +5,7 @@ client_cap = require('cmp_nvim_lsp').update_capabilities(client_cap)
 
 lsp.clangd.setup({
     capabilities = client_cap,
-    cmd = { "clangd-14",
+    cmd = { "clangd",
             "--malloc-trim",
             "-j=4",
             "--background-index",
