@@ -20,6 +20,8 @@ return require('packer').startup(function()
     use { 'L3MON4D3/LuaSnip' }
 
     use { 'windwp/nvim-autopairs' }
+    use { 'rmagatti/auto-session' }
+    use { 'rmagatti/session-lens' }
 
     -- Completion
     use { 'hrsh7th/nvim-cmp' }

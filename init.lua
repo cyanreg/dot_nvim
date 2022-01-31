@@ -20,6 +20,7 @@ vim.opt.clipboard        = 'unnamedplus'           -- copy/paste to system clipb
 vim.opt.hidden           = true
 vim.opt.signcolumn       = 'no'                    -- disable signscolumn
 vim.g.mapleader          = ','
+vim.o.sessionoptions     = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
 require('cfg_packer')         -- Load plugins manager
 require('cfg_filetype')       -- filetype loader and override
@@ -35,6 +36,7 @@ require('cfg_scrollview')     -- Scrollbar
 require('cfg_comment')        -- Comment code out
 require('cfg_gitsigns')       -- Git line highlighting
 require('cfg_barbar')         -- Normal tabs
+require('cfg_autosession')    -- Session management
 require('cfg_neoclip')        -- Clipboard
 require('cfg_telescope')      -- Finder
 require('cfg_indent')         -- Indentation guides
@@ -74,4 +76,8 @@ vim.api.nvim_set_keymap('n', '<leader>fl', ':lua require(\'telescope.builtin\').
 
 --[[ Clipboard ]]--
 vim.api.nvim_set_keymap('n', '<leader>cc', ':lua require(\'telescope\').extensions.neoclip.default()<cr>',
+                        { noremap = true, silent = true })
+
+--[[ Session manager ]]--
+vim.api.nvim_set_keymap('n', '<leader>qq', ':lua require(\'session-lens\').search_session()<cr>',
                         { noremap = true, silent = true })
