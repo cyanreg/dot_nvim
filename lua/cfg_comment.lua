@@ -22,3 +22,7 @@ require('Comment').setup({
         }
     end,
 })
+
+local ft = require('Comment.ft')
+ft.set('nasm', '; %s')
+ft.set('asm', { '// %s', '/* %s */' })
