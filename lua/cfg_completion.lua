@@ -26,7 +26,8 @@ cmp.setup({
         end,
     },
     completion = {
-        keyword_length = 4,
+        keyword_length = 3,
+        autocomplete = false,
     },
     experimental = {
         native_menu = false,
