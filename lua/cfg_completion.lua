@@ -74,7 +74,7 @@ cmp.setup({
                     fallback()
                 end
             end,
-            { "i", "s" }
+            { "i", "c" }
         ),
 
         ["<S-Tab>"] = cmp.mapping(
@@ -87,7 +87,7 @@ cmp.setup({
                     fallback()
                 end
             end,
-            { "i", "s" }
+            { "i", "c" }
         ),
 
         ['<CR>'] = cmp.mapping(
