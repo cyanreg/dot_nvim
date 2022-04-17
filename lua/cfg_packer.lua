@@ -4,13 +4,13 @@ return require('packer').startup(function()
     use { 'wbthomason/packer.nvim' }
     use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
     use { 'catppuccin/nvim', as = "catppuccin" }
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', branch = 'master' }
+    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', commit = '8a1acc00d2a768985a79358d1a6caa9f08a0eeea' }
     use { 'nvim-treesitter/nvim-treesitter-refactor', requires = 'nvim-treesitter/nvim-treesitter' }
     use { 'nvim-treesitter/nvim-treesitter-textobjects', requires = 'nvim-treesitter/nvim-treesitter' }
     use { 'neovim/nvim-lspconfig' }
     use { 'folke/todo-comments.nvim' }
     use { 'JoosepAlviste/nvim-ts-context-commentstring' }
-    use { 'https://github.com/numToStr/Comment.nvim' }
+    use { 'numToStr/Comment.nvim', tag = 'v0.6' }
     use { 'p00f/nvim-ts-rainbow' }
     use { 'edluffy/specs.nvim' }
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim', opt = false } }

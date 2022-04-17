@@ -25,13 +25,19 @@ cmp.setup({
             require('luasnip').lsp_expand(args.body)
         end,
     },
+    window = {
+      -- completion = cmp.config.window.bordered(),
+      -- documentation = cmp.config.window.bordered(),
+    },
     completion = {
         keyword_length = 3,
         autocomplete = false,
     },
     experimental = {
-        native_menu = false,
-        ghost_text = { hl_group = "Comment" },
+        ghost_text = { hl_group = 'Comment' },
+    },
+    view = {
+        entries = { name = 'custom', selection_order = 'top_down' },
     },
     formatting = {
         format = lspkind.cmp_format({
@@ -45,7 +51,7 @@ cmp.setup({
             })
         })
     },
-    mapping = {
+    mapping = cmp.mapping.preset.insert({
         -- Close
         ['<Esc>'] = cmp.mapping.abort(),
         ['<S-Esc>'] = cmp.mapping.close(),
@@ -105,12 +111,13 @@ cmp.setup({
             end,
             { "i", "s" }
         ),
-    },
+    }),
     sources = cmp.config.sources(
         {
             { name = 'nvim_lsp' },
             { name = 'luasnip' }, -- For luasnip users.
-        }, {
+        },
+        {
             { name = 'buffer' },
             { name = 'calc' },
         }
@@ -119,10 +126,12 @@ cmp.setup({
 
 -- Use buffer source for `/`.
 cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources(
         {
-            { name = 'nvim_lsp_document_symbol' },
-        }, {
+            { name = 'nvim_lsp_dmenuocument_symbol' },
+        },
+        {
             { name = 'buffer' },
         }
     )
@@ -130,12 +139,13 @@ cmp.setup.cmdline('/', {
 
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(':', {
+    mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources(
         {
             { name = 'path' },
         }, {
             { name = 'cmdline' },
-            { name = 'calc' }
+            { name = 'calc' },
         }
     )
 })
