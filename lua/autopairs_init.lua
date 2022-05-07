@@ -1,13 +1,11 @@
-local npairs = require("nvim-autopairs")
-
-npairs.setup({
+require('nvim-autopairs').setup({
     check_ts = true,
     disable_in_macro = true,
     disable_in_visualblock = true,
     enable_moveright = true,
     enable_afterquote = true,
     enable_check_bracket_line = true,
-    disable_filetype = { "TelescopePrompt" },
+    disable_filetype = { 'TelescopePrompt' },
     ts_config = {
 
     },

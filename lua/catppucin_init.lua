@@ -1,6 +1,4 @@
-local catppuccin = require("catppuccin")
-
-catppuccin.setup({
+require("catppuccin").setup({
     transparency = false,
     term_colors  = true,
     styles = {
@@ -68,4 +66,4 @@ if err.status then -- good
 end
 ]]--
 
-vim.cmd[[colorscheme catppuccin]]
+vim.cmd[[ colorscheme catppuccin ]]

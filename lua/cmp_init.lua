@@ -22,7 +22,7 @@ cmp.setup({
 
     snippet = {
         expand = function(args)
-            require('luasnip').lsp_expand(args.body)
+            luasnip.lsp_expand(args.body)
         end,
     },
     window = {
@@ -37,7 +37,10 @@ cmp.setup({
         ghost_text = { hl_group = 'Comment' },
     },
     view = {
-        entries = { name = 'custom', selection_order = 'top_down' },
+        entries = {
+            name = 'custom', -- or native
+            selection_order = 'top_down'
+        },
     },
     formatting = {
         format = lspkind.cmp_format({
@@ -48,6 +51,7 @@ cmp.setup({
                 luasnip       = "[LuaSnip]",
                 nvim_lua      = "[Lua]",
                 latex_symbols = "[Latex]",
+                treesitter    = "[TS]",
             })
         })
     },
@@ -68,7 +72,7 @@ cmp.setup({
         }),
 
         -- Complete
-        ["<Tab>"] = cmp.mapping(
+        ['<Tab>'] = cmp.mapping(
             function(fallback)
                 if cmp.visible() then
                     cmp.select_next_item()
@@ -118,21 +122,7 @@ cmp.setup({
             { name = 'luasnip' }, -- For luasnip users.
         },
         {
-            { name = 'buffer' },
-            { name = 'calc' },
-        }
-    )
-})
-
--- Use buffer source for `/`.
-cmp.setup.cmdline('/', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources(
-        {
-            { name = 'nvim_lsp_dmenuocument_symbol' },
-        },
-        {
-            { name = 'buffer' },
+            { name = 'treesitter' },
         }
     )
 })
@@ -143,9 +133,28 @@ cmp.setup.cmdline(':', {
     sources = cmp.config.sources(
         {
             { name = 'path' },
-        }, {
+        },
+        {
             { name = 'cmdline' },
-            { name = 'calc' },
         }
     )
+})
+
+--[[ LSP initialization ]]--
+local lsp = require('lspconfig')
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+
+lsp.clangd.setup({
+    capabilities = capabilities,
+    cmd = { "clangd",
+            "--malloc-trim",
+            "-j=3",
+            "--background-index",
+            "--pch-storage=memory",
+            "--inlay-hints",
+            "--header-insertion=never",
+    },
+    filetypes = { "c", "h", "cpp", "hpp", "objc", "objcpp" },
 })

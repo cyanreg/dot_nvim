@@ -1,8 +1,6 @@
 --require("nvim-treesitter.install").prefer_git = true
 
-local treesitter = require('nvim-treesitter.configs')
-
-treesitter.setup({
+require('nvim-treesitter.configs').setup({
     -- one of "all", "maintained", or a list
     ensure_installed = { "c", "bash", "comment", "css", "cuda",
                          "dot", "glsl", "html", "julia", "latex",

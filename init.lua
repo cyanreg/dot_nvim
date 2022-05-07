@@ -22,36 +22,44 @@ vim.opt.signcolumn       = 'no'                    -- disable signscolumn
 vim.g.mapleader          = ','
 vim.o.sessionoptions     = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
-require('cfg_packer')         -- Load plugins manager
-require('cfg_filetype')       -- filetype loader and override
-require('cfg_catppucin')      -- Load and configure colors
-require('cfg_lualine')        -- Load and configure statusline
-require('cfg_treesitter')     -- Syntax highlighting
-require('cfg_completion')     -- Completion
-require('cfg_lsp')            -- LSP (must be after completion)
-require('cfg_specs')          -- Cursor highlight
-require('cfg_todo')           -- Todo highlights
-require('cfg_column')         -- Limit column
-require('cfg_scrollview')     -- Scrollbar
-require('cfg_comment')        -- Comment code out
-require('cfg_gitsigns')       -- Git line highlighting
-require('cfg_barbar')         -- Normal tabs
-require('cfg_autosession')    -- Session management
-require('cfg_neoclip')        -- Clipboard
-require('cfg_telescope')      -- Finder
-require('cfg_indent')         -- Indentation guides
-require('cfg_autopairs')
+require('packer_init')             -- Load plugins manager
+require('filetype_init')           -- filetype loader and override
+require('catppucin_init')          -- Load and configure colors
+require('lualine_init')            -- Load and configure statusline
+require('treesitter_init')         -- Syntax highlighting
+require('cmp_init')                -- Completion
+require('todo-comments_init')      -- Todo highlights
+require('lightspeed_init')         -- Fast moving
+require('virt-column_init')        -- Limit column
+require('scrollview_init')         -- Scrollbar
+require('comment_init')            -- Comment code out
+require('gitsigns_init')           -- Git line highlighting
+require('barbar_init')             -- Normal tabs
+require('autosession_init')        -- Session management
+require('neoclip_init')            -- Clipboard
+require('telescope_init')          -- Finder
+require('indent_blankline_init')   -- Indentation guides
+require('autopairs_init')
+
+vim.cmd[[
+fun! SetupCommandAlias(from, to)
+  exec 'cnoreabbrev <expr> '.a:from
+        \ .' ((getcmdtype() is# ":" && getcmdline() is# "'.a:from.'")'
+        \ .'? ("'.a:to.'") : ("'.a:from.'"))'
+endfun
+call SetupCommandAlias("W","w")
+call SetupCommandAlias("Q","q")
+]]
 
 vim.api.nvim_set_keymap('n', '<C-h>', ':wincmd h<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<C-l>', ':wincmd l<CR>', { noremap = true, silent = true })
-
-vim.api.nvim_set_keymap('n', 'n', 'n:lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
-vim.api.nvim_set_keymap('n', 'N', 'N:lua require("specs").show_specs()<CR>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<A-j>', '<C-d>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<A-k>', '<C-u>', { noremap = true, silent = true })
 
 vim.api.nvim_set_keymap('n', '<leader>;', ':exe "normal A;"<cr>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>.', '/<c-r>=expand("<cword>")<CR><CR>N', { noremap = true, silent = true })
 
 --[[ Esc to clear search ]]--
 vim.api.nvim_set_keymap('n', '<Esc>', ':noh<cr>', { noremap = true, silent = true })

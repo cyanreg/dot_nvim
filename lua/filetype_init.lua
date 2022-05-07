@@ -1,6 +1,4 @@
-local ft = require("filetype")
-
-ft.setup({
+require('filetype').setup({
     overrides = {
         extensions = {
             -- Set the filetype of *.h files to c, NOT cpp

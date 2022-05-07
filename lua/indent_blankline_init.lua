@@ -1,22 +1,23 @@
-local indent = require("indent_blankline")
+--[[ Striped indentation ]]--
+if false then
+    local colors = require'catppuccin.api.colors'.get_colors()
 
---local colors = require'catppuccin.api.colors'.get_colors()
+    colors_list = {
+        ["IndentBlanklineIndent1"] = { gui = "nocombine", bg = colors.black2 },
+        ["IndentBlanklineIndent2"] = { gui = "nocombine", bg = colors.black0 },
+    }
 
-colors_list = {
-  --  ["IndentBlanklineIndent1"] = { gui = "nocombine", bg = colors.black2 },
-   -- ["IndentBlanklineIndent2"] = { gui = "nocombine", bg = colors.black0 },
-}
-
-for name, style in pairs(colors_list) do
-    vim.api.nvim_command(
-         [[highlight ]]
-         .. name .. ' ' ..
-         'guibg=' .. style.bg .. ' ' ..
-         'gui=' ..   style.gui
-    )
+    for name, style in pairs(colors_list) do
+        vim.api.nvim_command(
+             [[highlight ]]
+             .. name .. ' ' ..
+             'guibg=' .. style.bg .. ' ' ..
+             'gui=' ..   style.gui
+        )
+    end
 end
 
-indent.setup({
+require('indent_blankline').setup({
     --[[
     char = "",
     char_highlight_list = {
@@ -28,13 +29,14 @@ indent.setup({
         "IndentBlanklineIndent2",
     },
     ]]--
+
     show_trailing_blankline_indent = true,
     show_first_indent_level = false,
 
     max_indent_increase = 1,
 
     use_treesitter = true,
-    show_current_context = true,
+    show_current_context = false,
     show_current_context_start = false,
     show_current_context_start_on_current_line = false,
 

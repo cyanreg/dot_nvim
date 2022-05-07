@@ -1,6 +1,4 @@
-local git_hl = require('gitsigns')
-
-git_hl.setup({
+require('gitsigns').setup({
     signcolumn = false,
     numhl      = true,
     linehl     = false,

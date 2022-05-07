@@ -1,6 +1,4 @@
-local todo = require("todo-comments")
-
-todo.setup({
+require("todo-comments").setup({
     signs = false,
     highlight = {
         before = "",
