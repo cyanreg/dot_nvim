@@ -27,8 +27,8 @@ return packer.startup(function()
     use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
     use { 'dstein64/nvim-scrollview' }
     use { 'windwp/nvim-autopairs' }
-    use { 'ggandor/lightspeed.nvim' }
     use { 'lukas-reineke/indent-blankline.nvim' }
+    use { 'ggandor/leap.nvim' }
     use { 'lukas-reineke/virt-column.nvim' }
     use { 'AckslD/nvim-neoclip.lua' }
     use { 'nathom/filetype.nvim' }

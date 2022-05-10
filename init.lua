@@ -22,23 +22,23 @@ vim.opt.signcolumn       = 'no'                    -- disable signscolumn
 vim.g.mapleader          = ','
 vim.o.sessionoptions     = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
-require('packer_init')             -- Load plugins manager
-require('filetype_init')           -- filetype loader and override
-require('catppucin_init')          -- Load and configure colors
-require('lualine_init')            -- Load and configure statusline
-require('treesitter_init')         -- Syntax highlighting
-require('cmp_init')                -- Completion
-require('todo-comments_init')      -- Todo highlights
-require('lightspeed_init')         -- Fast moving
-require('virt-column_init')        -- Limit column
-require('scrollview_init')         -- Scrollbar
-require('comment_init')            -- Comment code out
-require('gitsigns_init')           -- Git line highlighting
-require('barbar_init')             -- Normal tabs
-require('autosession_init')        -- Session management
-require('neoclip_init')            -- Clipboard
-require('telescope_init')          -- Finder
-require('indent_blankline_init')   -- Indentation guides
+require('packer_init')
+require('filetype_init')
+require('catppucin_init')
+require('lualine_init')
+require('treesitter_init')
+require('cmp_init')
+require('todo-comments_init')
+require('leap_init')
+require('virt-column_init')
+require('scrollview_init')
+require('comment_init')
+require('gitsigns_init')
+require('barbar_init')
+require('autosession_init')
+require('neoclip_init')
+require('telescope_init')
+require('indent_blankline_init')
 require('autopairs_init')
 
 vim.cmd[[
