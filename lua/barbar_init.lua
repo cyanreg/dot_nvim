@@ -39,7 +39,7 @@ map('n', '<leader>bl', ':BufferOrderByLanguage<CR>', opts)
 -- :BarbarEnable - enables barbar (enabled by default)
 -- :BarbarDisable - very bad command, should never be used
 
-vim.g.bufferline = {
+require('bufferline').setup({
     animation = true,
     auto_hide = false,
     tabpages = true,
@@ -74,4 +74,4 @@ vim.g.bufferline = {
     -- Sets the name of unnamed buffers. By default format is "[Buffer X]"
     -- where X is the buffer number. But only a static string is accepted here.
     no_name_title = nil,
-}
+})
