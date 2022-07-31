@@ -1,29 +1,19 @@
+local colors = require("catppuccin.palettes").get_palette() -- fetch colors from g:catppuccin_flavour palette
+
 require("catppuccin").setup({
     transparency = false,
     term_colors  = true,
-    styles = {
-        comments  = "NONE",
-        functions = "NONE",
-        keywords  = "bold",
-        strings   = "NONE",
-        variables = "NONE",
+    compile = {
+        enabled = true,
+        path = vim.fn.stdpath "cache" .. "/catppuccin"
+    },
+    custom_highlights = {
+
     },
     integrations = {
         treesitter = true,
         native_lsp = {
             enabled = true,
-            virtual_text = {
-                errors      = "italic",
-                hints       = "italic",
-                warnings    = "italic",
-                information = "italic",
-            },
-            underlines = {
-                errors      = "underline",
-                hints       = "underline",
-                warnings    = "underline",
-                information = "underline",
-            }
         },
         lsp_trouble = false,
         lsp_saga = false,
@@ -55,16 +45,5 @@ require("catppuccin").setup({
         telekasten = false,
     }
 })
-
---[[
-local cp_api = require("catppuccin.api.colors")
-local err, colors = cp_api.get_colors("catppuccin")
-
-if err.status then -- good
-    catppuccin.remap({
-        bg = "#121017"
-    })
-end
-]]--
 
 vim.cmd[[ colorscheme catppuccin ]]
