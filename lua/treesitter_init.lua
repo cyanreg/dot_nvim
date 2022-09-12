@@ -1,10 +1,9 @@
---require("nvim-treesitter.install").prefer_git = true
-
 require('nvim-treesitter.configs').setup({
     -- one of "all", "maintained", or a list
-    ensure_installed = { "c", "bash", "comment", "css", "cuda",
-                         "dot", "glsl", "html", "julia", "latex",
-                         "lua", "make", "python", "rst", "json", },
+    ensure_installed = { "c", "bash", "comment", "html", "css",
+                         "dot", "glsl", "latex", "lua",
+                         "python", "rst", "json", "markdown",
+                         "meson", "ninja", "make" },
 
     ignore_install = { },        -- List of parsers to ignore installing
     refactor = {

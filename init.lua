@@ -20,10 +20,18 @@ vim.opt.clipboard        = 'unnamedplus'           -- copy/paste to system clipb
 vim.opt.hidden           = true
 vim.opt.signcolumn       = 'no'                    -- disable signscolumn
 vim.g.mapleader          = ','
+vim.g.netrw_fastbrowse   = 0
 vim.o.sessionoptions     = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal"
 
+vim.filetype.add({
+    extension = {
+        h = "c",
+        asm = "nasm",
+        S = "asm",
+    },
+})
+
 require('packer_init')
-require('filetype_init')
 require('catppucin_init')
 require('lualine_init')
 require('treesitter_init')

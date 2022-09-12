@@ -4,7 +4,7 @@ packer = require('packer')
 
 packer.init({
     git = {
-        clone_timeout = 300,
+        clone_timeout = 600,
     },
     luarocks = {
         python_cmd = 'python3'
@@ -31,7 +31,6 @@ return packer.startup(function()
     use { 'ggandor/leap.nvim' }
     use { 'lukas-reineke/virt-column.nvim' }
     use { 'AckslD/nvim-neoclip.lua' }
-    use { 'nathom/filetype.nvim' }
 
     use { 'rmagatti/auto-session' }
     use { 'L3MON4D3/LuaSnip' }
