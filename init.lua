@@ -40,13 +40,11 @@ require('todo-comments_init')
 require('leap_init')
 require('virt-column_init')
 require('scrollview_init')
-require('comment_init')
 require('gitsigns_init')
 require('barbar_init')
 require('autosession_init')
 require('neoclip_init')
 require('telescope_init')
-require('indent_blankline_init')
 require('autopairs_init')
 
 vim.cmd[[
@@ -92,8 +90,4 @@ vim.api.nvim_set_keymap('n', '<leader>fl', ':lua require(\'telescope.builtin\').
 
 --[[ Clipboard ]]--
 vim.api.nvim_set_keymap('n', '<leader>cc', ':lua require(\'telescope\').extensions.neoclip.default()<cr>',
-                        { noremap = true, silent = true })
-
---[[ Session manager ]]--
-vim.api.nvim_set_keymap('n', '<leader>qq', ':lua require(\'session-lens\').search_session()<cr>',
                         { noremap = true, silent = true })

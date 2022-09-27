@@ -32,6 +32,7 @@ require("catppuccin").setup({
         },
         dashboard = false,
         neogit = false,
+        leap = true,
         vim_sneak = false,
         fern = false,
         barbar = true,

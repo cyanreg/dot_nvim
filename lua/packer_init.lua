@@ -22,12 +22,10 @@ return packer.startup(function()
     use { 'catppuccin/nvim', as = "catppuccin" }
     use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
     use { 'folke/todo-comments.nvim' }
-    use { 'numToStr/Comment.nvim' }
     use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
     use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
     use { 'dstein64/nvim-scrollview' }
     use { 'windwp/nvim-autopairs' }
-    use { 'lukas-reineke/indent-blankline.nvim' }
     use { 'ggandor/leap.nvim' }
     use { 'lukas-reineke/virt-column.nvim' }
     use { 'AckslD/nvim-neoclip.lua' }
@@ -50,6 +48,5 @@ return packer.startup(function()
 
     use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' },
                                                         { 'kyazdani42/nvim-web-devicons' },
-                                                        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-                                                        { 'rmagatti/session-lens', requires = { 'rmagatti/auto-session' } } } }
+                                                        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } } }
 end)
