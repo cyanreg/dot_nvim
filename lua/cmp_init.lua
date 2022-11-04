@@ -142,9 +142,7 @@ cmp.setup.cmdline(':', {
 
 --[[ LSP initialization ]]--
 local lsp = require('lspconfig')
-
-local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 lsp.clangd.setup({
     capabilities = capabilities,
@@ -154,7 +152,9 @@ lsp.clangd.setup({
             "--background-index",
             "--pch-storage=memory",
             "--inlay-hints",
+            "--header-insertion-decorators=false",
             "--header-insertion=never",
+            "--log=error",
     },
     filetypes = { "c", "h", "cpp", "hpp", "objc", "objcpp" },
 })

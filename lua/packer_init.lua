@@ -20,14 +20,12 @@ return packer.startup(function()
     use { 'nvim-lua/plenary.nvim' }
 
     use { 'catppuccin/nvim', as = "catppuccin" }
-    use { 'hoob3rt/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
+    use { 'hoob3rt/lualine.nvim' }
     use { 'folke/todo-comments.nvim' }
-    use { 'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' } }
-    use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
+    use { 'lewis6991/gitsigns.nvim' }
+    use { 'romgrk/barbar.nvim' }
     use { 'dstein64/nvim-scrollview' }
-    use { 'windwp/nvim-autopairs' }
     use { 'ggandor/leap.nvim' }
-    use { 'lukas-reineke/virt-column.nvim' }
     use { 'AckslD/nvim-neoclip.lua' }
 
     use { 'rmagatti/auto-session' }
@@ -36,17 +34,14 @@ return packer.startup(function()
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', requires = { { 'p00f/nvim-ts-rainbow' },
                                                                              { 'nvim-treesitter/nvim-treesitter-refactor' },
-                                                                             { 'nvim-treesitter/nvim-treesitter-textobjects' },
-                                                                             { 'JoosepAlviste/nvim-ts-context-commentstring' } } }
+                                                                             { 'nvim-treesitter/nvim-treesitter-textobjects' } } }
 
-    use { 'hrsh7th/nvim-cmp', requires = { { 'saadparwaiz1/cmp_luasnip', requires = { 'L3MON4D3/LuaSnip' } },
-                                           { 'hrsh7th/cmp-nvim-lsp', requires = { 'neovim/nvim-lspconfig' } },
-                                           { 'onsails/lspkind-nvim' },
-                                           { 'ray-x/cmp-treesitter', requires = { 'nvim-treesitter/nvim-treesitter' } },
-                                           { 'hrsh7th/cmp-path' },
-                                           { 'hrsh7th/cmp-cmdline' } } }
+    use { 'hrsh7th/nvim-cmp', requires = { { 'saadparwaiz1/cmp_luasnip' },
+                                           { 'hrsh7th/cmp-nvim-lsp'     },
+                                           { 'onsails/lspkind-nvim'     },
+                                           { 'ray-x/cmp-treesitter'     },
+                                           { 'hrsh7th/cmp-path'         },
+                                           { 'hrsh7th/cmp-cmdline'      } } }
 
-    use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-lua/plenary.nvim' },
-                                                        { 'kyazdani42/nvim-web-devicons' },
-                                                        { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } } }
+    use { 'nvim-telescope/telescope.nvim', requires = { { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' } } }
 end)
