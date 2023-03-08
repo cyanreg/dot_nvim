@@ -7,8 +7,15 @@ require("catppuccin").setup({
         enabled = true,
         path = vim.fn.stdpath "cache" .. "/catppuccin"
     },
-    custom_highlights = {
+    styles = {
 
+    },
+    highlight_overrides = {
+        all = function(cp) -- Global highlight, will be replaced with custom_highlights if exists
+            return {
+
+            }
+        end,
     },
     integrations = {
         treesitter = true,

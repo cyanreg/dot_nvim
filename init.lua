@@ -41,7 +41,6 @@ require('leap_init')
 require('scrollview_init')
 require('gitsigns_init')
 require('barbar_init')
-require('autosession_init')
 require('neoclip_init')
 require('telescope_init')
 

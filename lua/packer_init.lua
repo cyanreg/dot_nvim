@@ -28,7 +28,6 @@ return packer.startup(function()
     use { 'ggandor/leap.nvim' }
     use { 'AckslD/nvim-neoclip.lua' }
 
-    use { 'rmagatti/auto-session' }
     use { 'L3MON4D3/LuaSnip' }
     use { 'neovim/nvim-lspconfig' }
 
